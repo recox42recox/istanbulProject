@@ -1,0 +1,229 @@
+/* Genel Sıfırlama */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: "Merriweather Sans", sans-serif;
+    width: 100%;
+    overflow-x: hidden; /* Sağa sola kaymayı engeller */
+    text-align: center;
+}
+
+/* Header / Hero Section */
+.istanbul-img {
+    background-image: url("src/images/shutterstock_291252509-scaled.webp");
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Ekrana tam oturması için vh kullandım */
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.background {
+    background-color: rgba(255, 255, 255, 0.8);
+    display: inline-block;
+    border-radius: 12px;
+    padding: 10px 20px;
+    width: 100%; 
+    max-width: 824px; /* Mobilde daralır, bilgisayarda 824px olur */
+}
+
+.sentence {
+    border-radius: 12px;
+    width: 100%;
+    max-width: 824px;
+}
+
+/* Orta İçerik Alanı */
+.holder {
+    background: linear-gradient(to bottom, #98efff, #b5ffcf);
+    padding: 80px 20px; /* Sabit yükseklik yerine padding kullandım */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 60px;
+}
+
+.flexer-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap; /* Sığmazsa alt satıra geçmesine izin verir */
+    gap: 40px;
+}
+
+/* --- İMAJLAR VE EFEKTLER --- */
+
+/* Yuvarlak Thumbnail'lar */
+.thumbnail {
+    margin-bottom: 10px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid rgba(0, 10, 20, 0.7);
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    transition: transform 0.3s ease; 
+}
+
+.thumbnail:hover {
+    transform: scale(1.1);
+}
+
+/* Footer'daki Kişisel Fotoğraf */
+.benzo {
+    width: 220px;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    transition: transform 0.3s ease;
+}
+
+.benzo:hover {
+    transform: scale(1.05);
+}
+
+/* Kart Yapısı (Personal Info) */
+.personal-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 90%; /* Mobilde ekranın %90'ını kaplar */
+    max-width: 600px; /* PC'de 600px'i geçmez */
+    padding: 30px;
+    margin: auto;
+    background-color: rgba(105, 206, 202, 0.893);
+    border-radius: 12px;
+    box-shadow: 2px 2px 12px rgba(90, 159, 228, 0.7);
+    transition: transform 0.3s ease;
+}
+
+.personal-info:hover {
+    transform: scale(1.05);
+}
+
+/* Yardımcı Sınıflar */
+.thumbnail-title {
+    font-size: 22px;
+    width: 100%;
+    max-width: 250px;
+    margin-top: 14px;
+}
+
+.thumbnail-description {
+    font-size: 19px;
+    width: 100%;
+    max-width: 300px;
+    margin-top: 12px;
+}
+
+.woob {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-section {
+    padding: 80px 20px; /* Sabit height yerine padding */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("src/images/Formula\ 1\ F1\ GIF\ by\ Red\ Bull\ Racing.gif");
+    background-size: cover;
+    background-position: center;
+}
+
+#boon {
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+}
+
+.aciklama {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#yetoski {
+    width: 100%; /* Sabit 250px kaldırıldı */
+}
+
+main {
+    color: rgb(26, 20, 87);
+}
+
+footer {
+    color: rgb(52, 29, 5);
+}
+
+.cool {
+    background: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet, red);
+    background-size: 400% auto; 
+    background-clip: text;
+    -webkit-background-clip: text; 
+    color: transparent;
+    font-size: 60px;
+    font-weight: bold;
+    animation: rainbow-flow 5s linear infinite;
+}
+
+@keyframes rainbow-flow {
+    0% {
+        background-position: 0% center;
+    }
+    100% {
+        background-position: 400% center;
+    }
+}
+
+#nope {
+    font-size: 40px;
+}
+
+/* =========================================
+   MOBİL UYUM (RESPONSIVE) İÇİN MEDIA QUERY
+   ========================================= */
+@media screen and (max-width: 768px) {
+    
+    /* Gökkuşağı ve başlık fontlarını küçültüyoruz ki ekrandan taşmasın */
+    .cool {
+        font-size: 35px;
+    }
+
+    #nope {
+        font-size: 28px;
+    }
+
+    h2.background {
+        font-size: 16px;
+    }
+
+    /* 3'lü kartları alt alta dizmek için */
+    .flexer-group {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    /* Hakkımda kartını dikey hale getiriyoruz */
+    .personal-info {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+#yetoski {
+    width: fit-content; /* Arka plan sadece yazının uzunluğu kadar olur */
+    margin: 0 auto;     /* Ekranın tam ortasında kalmasını sağlar */
+}
